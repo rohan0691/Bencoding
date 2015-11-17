@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.Vector;
+import java.util.LinkedList;
 
 public class Decode {
    
@@ -18,7 +19,7 @@ public class Decode {
      */
     private  Map decodeDictionary(String dictionary) throws Exception {
         TreeMap result = new TreeMap();
-    	List decodeList = new ArrayList();
+    	List decodeList = new LinkedList();
     	
        	String[] splitList = dictionary.split("\\s+");
     	for(int i=0; i<splitList.length; i++){
@@ -45,7 +46,7 @@ public class Decode {
      * content is malformed.
      */
     private  List decodeList(String list) throws Exception {
-    	List decodeList = new ArrayList();
+    	List decodeList = new LinkedList();
    
     	String[] splitList = list.split("\\s+");
     	for(int i=0; i<splitList.length; i++){
