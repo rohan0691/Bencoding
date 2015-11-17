@@ -149,7 +149,7 @@ public class Encode {
 	 * @return a string containing the encoded dictionary
 
 	 */
-	private String encode(Map encodeMap) throws Exception {
+private String encode(Map encodeMap) throws Exception {
 		StringBuilder encodeMapBuilder = new StringBuilder();
 		encodeMapBuilder.append("d ");
 
@@ -158,7 +158,12 @@ public class Encode {
 		for (Map.Entry<Object, Object> entry : sortedMap.entrySet()) {
 			if ((entry.getKey() instanceof String)) {
 				encodeMapBuilder.append(encodeElement((String) entry.getKey())+" ");
-				encodeMapBuilder.append(encodeElement(entry.getValue())+" ");
+				//Integer or Long instance changed to String to add string length value to decode later on
+				if(entry.getValue() instanceof Integer || entry.getValue() instanceof Long)
+				encodeMapBuilder.append(encodeElement(entry.getValue().toString())+" ");
+				else
+					encodeMapBuilder.append(encodeElement(entry.getValue())+" ");
+
 			}else{
 				throw new Exception("Invalid key passed in dictionary");
 			}
