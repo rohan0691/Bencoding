@@ -27,10 +27,10 @@ public class BencodingTest {
         test = "Test this string 44312 times";
         testMap = new HashMap();
         testList = new ArrayList();
-        testMap.put("string", "firstvalue");
+        testMap.put("string", "1Value");
         testMap.put("int", "44521");
-        testMap.put("intandstring", "testing123");
-        testList.add("1addingstring2again");
+        testMap.put("inThisString", "test12");
+        testList.add("test1String");
         testList.add(101100);
         
     }
